@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
 import { NavbarComponent } from './template/navbar/navbar.component';
@@ -11,9 +11,9 @@ import { NavbarComponent } from './template/navbar/navbar.component';
   imports: [RouterOutlet, NavbarComponent],
 })
 export class AppComponent implements OnInit {
-  private primengConfig = inject(PrimeNGConfig);
+  public primengConfig = inject(PrimeNGConfig);
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     this.primengSettings();
   }
 

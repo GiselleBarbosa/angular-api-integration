@@ -10,7 +10,7 @@ export const routes: Routes = [
   {
     path: 'home',
     loadComponent: () =>
-      import('./template/home/home.component').then((c) => c.HomeComponent),
+      import('./template/home/home.component').then(c => c.HomeComponent),
   },
 
   {
