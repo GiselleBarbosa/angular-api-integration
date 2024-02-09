@@ -12,6 +12,22 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./template/home/home.component').then(c => c.HomeComponent),
   },
+  {
+    path: 'cadastro',
+    loadComponent: () =>
+      import('./features/cadastro/cadastro.component').then(c => c.CadastroComponent),
+  },
+  {
+    path: 'listagem',
+    loadComponent: () =>
+      import('./features/listagem/listagem.component').then(c => c.ListagemComponent),
+  },
+
+  {
+    path: 'edicao',
+    loadComponent: () =>
+      import('./features/edicao/edicao.component').then(c => c.EdicaoComponent),
+  },
 
   {
     path: '**',
