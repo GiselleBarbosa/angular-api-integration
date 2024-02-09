@@ -1,14 +1,14 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
+import { NavbarComponent } from './template/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [RouterOutlet, NavbarComponent],
 })
 export class AppComponent implements OnInit {
   private primengConfig = inject(PrimeNGConfig);
