@@ -2,13 +2,13 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
 import { NavbarComponent } from './template/navbar/navbar.component';
-
+import { CardModule } from 'primeng/card';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent],
+  imports: [RouterOutlet, NavbarComponent, CardModule],
 })
 export class AppComponent implements OnInit {
   public primengConfig = inject(PrimeNGConfig);

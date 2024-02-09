@@ -3,11 +3,9 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-listagem',
+  templateUrl: './listagem.component.html',
+  styleUrls: ['./listagem.component.scss'],
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './listagem.component.html',
-  styleUrls: ['./listagem.component.scss']
 })
-export class ListagemComponent {
-
-}
+export class ListagemComponent {}
