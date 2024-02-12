@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-cadastro',
+  selector: 'app-perfil',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.scss']
+  templateUrl: './perfil.component.html',
+  styleUrls: ['./perfil.component.scss']
 })
-export class CadastroComponent {
+export class PerfilComponent {
 
 }

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { ListagemComponent } from 'src/app/features/listagem/listagem.component';
+import { RouterLink } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [ListagemComponent],
+  imports: [ButtonModule, RouterLink],
 })
 export class HomeComponent {}

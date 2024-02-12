@@ -2,12 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-edicao',
+  selector: 'app-cadastro',
+  templateUrl: './cadastro.component.html',
+  styleUrls: ['./cadastro.component.scss'],
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './edicao.component.html',
-  styleUrls: ['./edicao.component.scss']
 })
-export class EdicaoComponent {
-
-}
+export class CadastroComponent {}
