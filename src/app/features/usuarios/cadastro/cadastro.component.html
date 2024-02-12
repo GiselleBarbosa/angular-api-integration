@@ -21,17 +21,19 @@
       <p-inputNumber formControlName="text" class="mt-2" />
     </div>
 
-    <div class="flex gap-3 mt-5 justify-content-center sm:justify-content-start">
-      <p-button
-        label="Cadastre-se"
-        [outlined]="true"
-        severity="secondary"
-        routerLink="/usuarios/cadastro"></p-button>
-      <p-button
-        label="Login"
-        [raised]="true"
-        severity="secondary"
-        routerLink="/autenticacao/login"></p-button>
+    <div class="flex flex-column w-full justify-content-center">
+      <div class="mb-3">
+        <p-button label="Cadastrar" severity="secondary" routerLink="/"></p-button>
+      </div>
+      <div class="text-center">
+        <p>Já tem uma conta?</p>
+
+        <p-button
+          label="Login"
+          [outlined]="true"
+          severity="secondary"
+          routerLink="/autenticacao/login"></p-button>
+      </div>
     </div>
   </div>
 </div>
