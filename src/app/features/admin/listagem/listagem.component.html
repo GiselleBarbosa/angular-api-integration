@@ -5,12 +5,26 @@
 </div>
 
 <p-panel header="Lista de clientes">
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-    mollit anim id est laborum.
-  </p>
+  <ng-container *ngIf="usuarios$ | async as usuarios">
+    <p-table [value]="usuarios" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>CPF</th>
+          <th>Nome</th>
+          <th>Nascimento</th>
+          <th>Telefone</th>
+          <th>Email</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-usuario>
+        <tr>
+          <td>{{ usuario.cpf }}</td>
+          <td>{{ usuario.nome }}</td>
+          <td>{{ usuario.data_nascimento }}</td>
+          <td>{{ usuario.telefone }}</td>
+          <td>{{ usuario.email }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </ng-container>
 </p-panel>
