@@ -1,11 +1,11 @@
 <div class="flex justify-content-between align-items-center mb-3">
-  <h3>Bem vindo(a), {{ administrador }},</h3>
+  <h3>Olá, {{ administrador }}</h3>
 
   <i class="pi pi-sign-out cursor-pointer text-2xl" routerLink="/"></i>
 </div>
 
-<p-panel header="Lista de clientes">
-  <ng-container *ngIf="usuarios$ | async as usuarios">
+<ng-container *ngIf="usuarios$ | async as usuarios">
+  <p-panel header="Lista de clientes">
     <p-table [value]="usuarios" [tableStyle]="{ 'min-width': '50rem' }">
       <ng-template pTemplate="header">
         <tr>
@@ -26,5 +26,14 @@
         </tr>
       </ng-template>
     </p-table>
-  </ng-container>
-</p-panel>
+  </p-panel>
+</ng-container>
+
+<ng-container *ngIf="error$ | async as mensagemDeErroDaApi">
+  <p-messages
+    *ngIf="mensagemDeErroDaApi !== null"
+    [(value)]="mensagemErroApi"
+    [showTransitionOptions]="'300ms'"
+    [enableService]="false"
+    [closable]="false"></p-messages>
+</ng-container>

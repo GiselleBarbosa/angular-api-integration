@@ -2,11 +2,13 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
+import { MessagesModule } from 'primeng/messages';
 
 import { ButtonModule } from 'primeng/button';
 import { AsyncPipe, NgClass, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ApiUsuariosService } from 'src/app/core/services/api-usuarios.service';
+import { Message } from 'primeng/api';
 
 @Component({
   selector: 'app-listagem',
@@ -23,6 +25,7 @@ import { ApiUsuariosService } from 'src/app/core/services/api-usuarios.service';
     NgFor,
     FormsModule,
     AsyncPipe,
+    MessagesModule,
   ],
 })
 export class ListagemComponent implements OnInit {
@@ -30,10 +33,23 @@ export class ListagemComponent implements OnInit {
 
   public usuarios$ = this.apiUsuariosService.usuarios$;
 
+  public error$ = this.apiUsuariosService.error$;
+
   public administrador = 'Administrador';
+
+  public mensagemErroApi!: Message[];
 
   public ngOnInit(): void {
     this.apiUsuariosService.listaTodosUsuarios();
-    this.usuarios$.subscribe();
+
+    this.error$.subscribe(mensagem => {
+      console.log('mensagem', mensagem);
+      this.mensagemErroApi = [
+        {
+          severity: 'error',
+          summary: mensagem,
+        },
+      ];
+    });
   }
 }
