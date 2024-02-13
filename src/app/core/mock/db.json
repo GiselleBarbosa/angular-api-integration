@@ -1,0 +1,31 @@
+{
+  "usuarios": [
+    {
+      "cpf": "234.234.123-00",
+      "nome": "Clark Kent",
+      "data_nascimento": "12/01/1990",
+      "telefone": "11 988888-3333",
+      "email": "admin@email.com",
+      "password": "12345",
+      "role": "admin"
+    },
+      {
+        "cpf": "000.123.789-08",
+        "nome": "Bruce Wayne",
+        "data_nascimento": "26/07/1968",
+        "telefone": "55 93344-3434",
+        "email": "batman@batmail.com",
+        "password": "12345",
+        "role": "user"
+      },
+        {
+          "cpf": "111.222.333-44",
+          "nome": "Lara Croft",
+          "data_nascimento": "01/10/1990",
+          "telefone": "51 97685-0888",
+          "email": "tombraider@email.com",
+          "password": "12345",
+          "role": "user"
+        }
+  ]
+}
