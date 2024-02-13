@@ -39,6 +39,16 @@ export class ListagemComponent implements OnInit {
 
   public mensagemErroApi!: Message[];
 
+  public titulosDaTabela = [
+    'cpf',
+    'Nome completo',
+    'Data nascimento',
+    'Telefone',
+    'Email',
+    'Editar',
+    'Remover',
+  ];
+
   public ngOnInit(): void {
     this.apiUsuariosService.listaTodosUsuarios();
 
