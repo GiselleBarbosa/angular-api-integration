@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       this.formularioLogin.valid &&
       this.formularioLogin.get('email')?.value === 'admin@email.com'
     ) {
-      this.router.navigate(['/administrador/lista-de-usuarios']);
+      this.router.navigate(['/administrador/lista-usuarios']);
       console.log(dadosDoFormulario);
     } else if (this.formularioLogin.valid) {
       this.router.navigate(['/usuarios/perfil']);

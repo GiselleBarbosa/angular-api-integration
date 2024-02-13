@@ -1,5 +1,5 @@
 <div class="flex justify-content-between align-items-center mb-3">
-  <h3>Olá, {{ administrador }}</h3>
+  <h3>Olá, {{ usuarioAutenticado }}</h3>
 
   <i class="pi pi-sign-out cursor-pointer text-2xl" routerLink="/"></i>
 </div>
@@ -22,6 +22,7 @@
           <td>{{ usuario.email }}</td>
           <td>
             <p-button
+              (click)="navegarParaEdicaoUsuario(usuario.cpf)"
               icon="pi pi-pencil"
               [rounded]="true"
               [text]="true"

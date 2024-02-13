@@ -38,13 +38,13 @@ export const usuarioRoutes: Routes = [
 
 export const administradorRoutes: Routes = [
   {
-    path: 'lista-de-usuarios',
+    path: 'lista-usuarios',
     component: ListagemComponent,
     title: 'Administrador - Lista de usuarios',
   },
 
   {
-    path: 'lista-de-usuarios/edicao',
+    path: 'lista-usuarios/edicao/:cpf',
     component: EdicaoComponent,
     title: 'Administrador - Edição de usuarios',
   },

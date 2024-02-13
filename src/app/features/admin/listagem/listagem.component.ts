@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { MessagesModule } from 'primeng/messages';
@@ -30,12 +30,13 @@ import { Message } from 'primeng/api';
 })
 export class ListagemComponent implements OnInit {
   private apiUsuariosService = inject(ApiUsuariosService);
+  private router = inject(Router);
 
   public usuarios$ = this.apiUsuariosService.usuarios$;
 
   public error$ = this.apiUsuariosService.error$;
 
-  public administrador = 'Administrador';
+  public usuarioAutenticado = 'Administrador';
 
   public mensagemErroApi!: Message[];
 
@@ -61,5 +62,10 @@ export class ListagemComponent implements OnInit {
         },
       ];
     });
+  }
+
+  public navegarParaEdicaoUsuario(cpf: string): void {
+    this.router.navigate([`administrador/lista-usuarios/edicao/${cpf}`]);
+    console.log(cpf);
   }
 }
