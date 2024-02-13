@@ -1,7 +1,7 @@
 <div class="flex justify-content-between align-items-center mb-3">
   <h3>Bem vindo(a), {{ usuario_autenticado }},</h3>
 
-  <i class="pi pi-sign-out cursor-pointer text-2xl"></i>
+  <i class="pi pi-sign-out cursor-pointer text-2xl" routerLink="/"></i>
 </div>
 
 <div class="card flex flex-column flex-wrap p-fluid gap-3">
@@ -42,6 +42,10 @@
     class="flex flex-column justify-content-center gap-3 p-fluid w-12 mt-2 sm:flex-row sm:justify-content-start sm:w-3">
     <p-button label="Atualizar dados" [raised]="true" severity="secondary"></p-button>
 
-    <p-button label="cancelar " [outlined]="true" severity="secondary"></p-button>
+    <p-button
+      label="cancelar "
+      [outlined]="true"
+      severity="secondary"
+      routerLink="/"></p-button>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { PanelModule } from 'primeng/panel';
 
 @Component({
@@ -6,6 +7,8 @@ import { PanelModule } from 'primeng/panel';
   templateUrl: './listagem.component.html',
   styleUrls: ['./listagem.component.scss'],
   standalone: true,
-  imports: [PanelModule],
+  imports: [PanelModule, RouterLink],
 })
-export class ListagemComponent {}
+export class ListagemComponent {
+  public administrador = 'Administrador';
+}
