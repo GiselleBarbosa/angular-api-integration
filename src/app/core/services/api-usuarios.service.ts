@@ -37,21 +37,15 @@ export class ApiUsuariosService {
   };
 
   public listaTodosUsuarios(): void {
+    const mensagemErro = 'Falha na requisição. Por favor, tente novamente mais tarde.';
+
     this.http
       .get<Usuarios[]>(`${this.baseUrl}`, this.httpOptions)
       .pipe(
-        tap(
-          usuarios => this.usuariosSubject.next(usuarios),
-          () =>
-            this.errorSubject.next(
-              'Falha na requisição. Por favor, tente novamente mais tarde.'
-            )
-        ),
+        tap(usuarios => this.usuariosSubject.next(usuarios)),
         catchError(error => {
-          return throwError(
-            'Falha na requisição. Por favor, tente novamente mais tarde.',
-            error
-          );
+          this.errorSubject.next(mensagemErro);
+          return throwError(mensagemErro, error);
         }),
         shareReplay(1),
         takeUntilDestroyed(this.destroyRef)
@@ -60,26 +54,20 @@ export class ApiUsuariosService {
   }
 
   public listaUsuarioPorCPF(cpf: string): Observable<Usuarios> {
+    const mensagemErro = 'Falha na requisição. Por favor, tente novamente mais tarde.';
+
     return this.http.get<Usuarios[]>(`${this.baseUrl}?cpf=${cpf}`, this.httpOptions).pipe(
       map(usuarios => {
         if (usuarios.length > 0) {
-          return usuarios[0]; // Retornando o primeiro usuário encontrado
+          return usuarios[0];
         } else {
           throw new Error('Usuário não encontrado');
         }
       }),
-      tap(
-        usuario => this.usuarioCpfSubject.next(usuario),
-        () =>
-          this.errorSubject.next(
-            'Falha na requisição. Por favor, tente novamente mais tarde.'
-          )
-      ),
+      tap(usuario => this.usuarioCpfSubject.next(usuario)),
       catchError(error => {
-        return throwError(
-          'Falha na requisição. Por favor, tente novamente mais tarde.',
-          error
-        );
+        this.errorSubject.next(mensagemErro);
+        return throwError(mensagemErro, error);
       }),
       shareReplay(1),
       takeUntilDestroyed(this.destroyRef)
