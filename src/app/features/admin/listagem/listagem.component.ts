@@ -9,6 +9,7 @@ import { AsyncPipe, NgClass, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ApiUsuariosService } from 'src/app/core/services/api-usuarios.service';
 import { Message } from 'primeng/api';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-listagem',
@@ -65,5 +66,12 @@ export class ListagemComponent implements OnInit {
 
   public navegarParaEdicaoUsuario(cpf: string): void {
     this.router.navigate([`administrador/lista-usuarios/edicao/${cpf}`]);
+  }
+
+  public removerUsuario(cpf: string): void {
+    this.apiUsuariosService
+      .removerUsuario(cpf)
+      .pipe(take(1))
+      .subscribe(() => this.apiUsuariosService.listaTodosUsuarios());
   }
 }

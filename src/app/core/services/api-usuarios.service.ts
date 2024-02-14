@@ -7,6 +7,7 @@ import {
   Observable,
   shareReplay,
   Subject,
+  switchMap,
   tap,
   throwError,
 } from 'rxjs';
@@ -70,6 +71,29 @@ export class ApiUsuariosService {
         return throwError(mensagemErro, error);
       }),
       shareReplay(1),
+      takeUntilDestroyed(this.destroyRef)
+    );
+  }
+
+  public removerUsuario(cpf: string): Observable<void> {
+    const errorMessage =
+      'Falha ao remover usuário. Por favor, tente novamente mais tarde.';
+
+    // Buscar o usuário pelo CPF para obter o id correspondente
+    return this.http.get<any[]>(`${this.baseUrl}?cpf=${cpf}`, this.httpOptions).pipe(
+      switchMap(usuarios => {
+        if (usuarios.length > 0) {
+          const id = usuarios[0].id; // Supondo que o identificador único seja 'id'
+          return this.http.delete<void>(`${this.baseUrl}/${id}`, this.httpOptions).pipe(
+            catchError(error => {
+              this.errorSubject.next(errorMessage);
+              return throwError(errorMessage, error);
+            })
+          );
+        } else {
+          return throwError('Usuário não encontrado');
+        }
+      }),
       takeUntilDestroyed(this.destroyRef)
     );
   }
