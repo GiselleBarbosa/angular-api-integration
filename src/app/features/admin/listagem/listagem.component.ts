@@ -54,7 +54,6 @@ export class ListagemComponent implements OnInit {
     this.apiUsuariosService.listaTodosUsuarios();
 
     this.error$.subscribe(mensagem => {
-      console.log('mensagem', mensagem);
       this.mensagemErroApi = [
         {
           severity: 'error',
@@ -66,6 +65,5 @@ export class ListagemComponent implements OnInit {
 
   public navegarParaEdicaoUsuario(cpf: string): void {
     this.router.navigate([`administrador/lista-usuarios/edicao/${cpf}`]);
-    console.log(cpf);
   }
 }
