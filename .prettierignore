@@ -43,3 +43,17 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Other files
+.eslintrc.json
+.prettierrc.json
+/.vscode/extensions.json
+/.vscode/launch.json
+/.vscode/tasks.json
+angular.json
+package-lock.json
+package.json
+README.md
+tsconfig.app.json
+tsconfig.json
+tsconfig.spec.json
