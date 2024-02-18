@@ -38,13 +38,13 @@ O esquema do banco de dados pode ser encontrado no diretório `database`. Certif
 
 Você pode visualizar o mapa do site abaixo:
 
-![Mapa do Site](assets/docs/mapa_site.png)
+![Mapa do Site](src/assets/docs/mapa_site.png)
 
 ## Visualização da Modelagem de Dados
 
 Você pode visualizar uma prévia da modelagem de dados abaixo:
 
-![Modelagem de Dados](assets/docs/modelagem_inicial.png)
+![Modelagem de Dados](src/assets/docs/modelagem_inicial.png)
 
 ## Contribuindo
 
