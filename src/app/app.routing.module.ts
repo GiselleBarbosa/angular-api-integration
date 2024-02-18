@@ -24,8 +24,8 @@ export const routes: Routes = [
   },
 
   {
-    path: 'usuarios',
-    loadChildren: () => import('./routes').then(rotas => rotas.usuarioRoutes),
+    path: 'funcionarios',
+    loadChildren: () => import('./routes').then(rotas => rotas.funcionariosRoutes),
   },
 
   {

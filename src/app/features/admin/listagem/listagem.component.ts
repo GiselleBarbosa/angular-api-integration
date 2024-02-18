@@ -65,7 +65,7 @@ export class ListagemComponent implements OnInit {
   }
 
   public navegarParaEdicaoUsuario(cpf: string): void {
-    this.router.navigate([`administrador/lista-usuarios/edicao/${cpf}`]);
+    this.router.navigate([`administrador/lista-funcionarios/edicao/${cpf}`]);
   }
 
   public removerUsuario(cpf: string): void {

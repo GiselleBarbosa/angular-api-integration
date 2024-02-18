@@ -22,30 +22,42 @@ export const autenticaticaoRoutes: Routes = [
   },
 ];
 
-export const usuarioRoutes: Routes = [
+export const funcionariosRoutes: Routes = [
   {
     path: 'cadastro',
     component: CadastroComponent,
-    title: 'Cadastro de usuário',
+    title: 'Cadastro de usuarios',
   },
 
   {
-    path: 'perfil',
+    path: 'funcionario-perfil',
     component: PerfilComponent,
-    title: 'Perfil do usuário',
+    title: 'Perfil do funcionario',
   },
 ];
 
 export const administradorRoutes: Routes = [
   {
-    path: 'lista-usuarios',
+    path: 'lista-funcionarios',
     component: ListagemComponent,
-    title: 'Administrador - Lista de usuarios',
+    title: 'Administrador - Lista de funcionarios',
   },
 
   {
-    path: 'lista-usuarios/edicao/:cpf',
+    path: 'lista-funcionarios/edicao/:cpf',
     component: EdicaoComponent,
-    title: 'Administrador - Edição de usuarios',
+    title: 'Administrador - Edição de funcionarios',
+  },
+
+  {
+    path: 'adminstrador/perfil',
+    component: PerfilComponent,
+    title: 'Administrador - Lista de funcionarios',
+  },
+
+  {
+    path: 'adminstrador/perfil/edicao',
+    component: EdicaoComponent,
+    title: 'Administrador - Edicao de Perfil ADMINISTRADOR',
   },
 ];
