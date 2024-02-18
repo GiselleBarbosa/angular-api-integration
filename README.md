@@ -1,27 +1,55 @@
-# AngularApiIntegration
+# SGU - Sistema de Gerenciamento de Usuários
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+O SGU (Sistema de Gerenciamento de Usuários) é uma aplicação web desenvolvida com Angular no frontend, Java com Spring Boot no backend e PostgreSQL como banco de dados. O principal objetivo deste sistema é fornecer funcionalidades básicas para o gerenciamento de perfis de administradores do sistema ou funcionários.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- CRUD de usuários: O administrador pode realizar operações de criação, leitura, atualização e deleção de usuários.
+- Autenticação e Autorização: O sistema oferece autenticação de usuários e autorização baseada em papéis para garantir que apenas administradores tenham acesso às operações de gerenciamento de usuários.
 
-## Code scaffolding
+## Tecnologias Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 16
+- Java com Spring Boot
+- PostgreSQL
 
-## Build
+## Pré-requisitos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Antes de executar a aplicação, certifique-se de ter instalado o seguinte:
 
-## Running unit tests
+- Node.js
+- Angular CLI
+- Java Development Kit (JDK)
+- PostgreSQL
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Executando a Aplicação
 
-## Running end-to-end tests
+1. Clone este repositório para o seu ambiente local.
+2. Navegue até o diretório do frontend e execute `npm install` para instalar as dependências.
+3. Inicie o frontend com o comando `ng serve`.
+4. Navegue até o diretório do backend e execute a aplicação Spring Boot.
+5. Certifique-se de ter uma instância do PostgreSQL em execução com o esquema de banco de dados apropriado.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Configuração do Banco de Dados
 
-## Further help
+O esquema do banco de dados pode ser encontrado no diretório `database`. Certifique-se de configurar corretamente o banco de dados antes de iniciar a aplicação.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Visualização do Mapa do Site
+
+Você pode visualizar o mapa do site abaixo:
+
+![Mapa do Site](assets/docs/mapa_site.png)
+
+## Visualização da Modelagem de Dados
+
+Você pode visualizar uma prévia da modelagem de dados abaixo:
+
+![Modelagem de Dados](assets/docs/modelagem_inicial.png)
+
+## Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request com melhorias, correções de bugs ou novas funcionalidades.
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT).
