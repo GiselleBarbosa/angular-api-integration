@@ -10,7 +10,7 @@
     "lint": "npx eslint",
     "lint:fix": "npx eslint --quiet --fix",
     "format": "npx prettier --write .",
-    "db": "npx json-server ./src/app/core/mock/db.json"
+    "db": "npx json-server ./database/db.json"
   },
   "private": true,
   "dependencies": {
