@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ButtonModule } from 'primeng/button';
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,6 +9,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
   standalone: true,
-  imports: [CommonModule],
+  imports: [ToolbarModule, ButtonModule, RouterLink, CommonModule],
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  public teste(pagina: string): void {
+    console.log(pagina);
+  }
+}

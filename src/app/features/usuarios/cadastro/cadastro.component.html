@@ -1,0 +1,49 @@
+<h3>Cadastre-se para acessar o painel do usuário</h3>
+<div class="flex justify-content-center">
+  <div class="card flex flex-wrap p-fluid gap-3 max-w-30rem">
+    <div class="flex-auto">
+      <label for="nome">CPF</label>
+      <input type="text" pInputText formControlName="" class="mt-2" />
+    </div>
+
+    <div class="flex-auto">
+      <label for="nome">Nome completo</label>
+      <input type="text" pInputText formControlName="" class="mt-2" />
+    </div>
+
+    <div class="flex-auto">
+      <label for="email">Email</label>
+      <input type="text" pInputText formControlName="" class="mt-2" />
+    </div>
+
+    <div class="flex-auto">
+      <label for="senha">Senha</label>
+      <input type="password" pInputText formControlName="" class="mt-2" />
+    </div>
+
+    <div class="flex-auto">
+      <label for="telefone">Telefone</label>
+      <input type="text" pInputText formControlName="" class="mt-2" />
+    </div>
+
+    <div class="flex-auto">
+      <label for="data-nascimento">Data de nascimento</label>
+      <input type="date" pInputText formControlName="" class="mt-2" />
+    </div>
+
+    <div class="flex flex-column w-full justify-content-center">
+      <div class="mb-3">
+        <p-button label="Cadastrar" severity="secondary"></p-button>
+      </div>
+      <div class="text-center">
+        <p>Já tem uma conta?</p>
+
+        <p-button
+          label="Login"
+          [outlined]="true"
+          severity="secondary"
+          routerLink="/autenticacao/login"></p-button>
+      </div>
+    </div>
+  </div>
+</div>

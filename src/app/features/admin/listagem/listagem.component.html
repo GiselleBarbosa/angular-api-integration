@@ -1,0 +1,52 @@
+<div class="flex justify-content-between align-items-center mb-3">
+  <h3>Olá, {{ usuarioAutenticado }}</h3>
+
+  <i class="pi pi-sign-out cursor-pointer text-2xl" routerLink="/"></i>
+</div>
+
+<ng-container *ngIf="usuarios$ | async as usuarios">
+  <p-panel header="Lista de clientes">
+    <p-table [value]="usuarios" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th *ngFor="let titulo of titulosDaTabela">{{ titulo }}</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-usuario>
+        <tr>
+          <td>{{ usuario.cpf }}</td>
+          <td>{{ usuario.nome }}</td>
+          <td>{{ usuario.data_nascimento }}</td>
+          <td>{{ usuario.telefone }}</td>
+          <td>{{ usuario.email }}</td>
+          <td>
+            <p-button
+              (click)="navegarParaEdicaoUsuario(usuario.cpf)"
+              icon="pi pi-pencil"
+              [rounded]="true"
+              [text]="true"
+              severity="secondary"></p-button>
+          </td>
+          <td>
+            <p-button
+              (click)="removerUsuario(usuario.cpf)"
+              icon="pi pi-times"
+              [rounded]="true"
+              [text]="true"
+              severity="danger "></p-button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-panel>
+</ng-container>
+
+<ng-container *ngIf="error$ | async as mensagemDeErroDaApi">
+  <p-messages
+    *ngIf="mensagemDeErroDaApi !== null"
+    [(value)]="mensagemErroApi"
+    [showTransitionOptions]="'300ms'"
+    [enableService]="false"
+    [closable]="false"></p-messages>
+</ng-container>

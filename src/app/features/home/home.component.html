@@ -1,0 +1,26 @@
+<div>
+  <h1 class="mt-0">Sistema de Gerenciamento de Usuários</h1>
+
+  <p>
+    Seja bem vindo(a) ao Sistema de Gerenciamento de Usuários. Você poderá criar uma conta
+    e acessar seu perfil.
+  </p>
+  <p>Algumas funções só estarão disponíveis para o administrador do sistema.</p>
+
+  <div
+    class="flex flex-column justify-content-center gap-3 p-fluid w-12 mt-5 sm:flex-row sm:justify-content-start sm:w-3">
+    <p-button
+      label="Cadastrar "
+      [outlined]="true"
+      severity="secondary"
+      routerLink="/usuarios/cadastro"></p-button>
+
+    <div>
+      <p-button
+        label="Login"
+        [raised]="true"
+        severity="secondary"
+        routerLink="/autenticacao/login"></p-button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+{
+  "usuarios": [
+    {
+      "cpf": "23423412300",
+      "nome": "Clark Kent",
+      "data_nascimento": "12/01/1990",
+      "telefone": "11988228333",
+      "email": "admin@email.com",
+      "password": "12345",
+      "role": "admin"
+    },
+    {
+      "cpf": "00012378908",
+      "nome": "Bruce Wayne",
+      "data_nascimento": "26/07/1968",
+      "telefone": "55933443434",
+      "email": "batman@batmail.com",
+      "password": "12345",
+      "role": "user"
+    },
+    {
+      "cpf": "11122233344",
+      "nome": "Lara Croft",
+      "data_nascimento": "01/10/1990",
+      "telefone": "51976850888",
+      "email": "tombraider@email.com",
+      "password": "12345",
+      "role": "user"
+    },
+    {
+      "cpf": "09876543210",
+      "nome": "Diana Prince",
+      "data_nascimento": "30/06/1985",
+      "telefone": "14944997766",
+      "email": "wonderwoman@email.com",
+      "password": "12345",
+      "role": "user"
+    },
+    {
+      "cpf": "77788899900",
+      "nome": "Tony Stark",
+      "data_nascimento": "29/05/1970",
+      "telefone": "21925551234",
+      "email": "ironman@starkindustries.com",
+      "password": "12345",
+      "role": "admin"
+    },
+    {
+      "cpf": "44455566677",
+      "nome": "Natasha Romanoff",
+      "data_nascimento": "04/11/1982",
+      "telefone": "65990124567",
+      "email": "blackwidow@shield.com",
+      "password": "12345",
+      "role": "user"
+    }
+  ]
+}
