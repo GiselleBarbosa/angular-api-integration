@@ -4,18 +4,14 @@
     'background-image':
       'linear-gradient(to right, var(--bluegray-500), var(--bluegray-800))'
   }">
-  <div class="p-toolbar-group-start">
-    <div class="flex flex-wrap align-items-center">
-      <button
-        routerLink="home"
-        class="p-link inline-flex justify-content-center align-items-center text-white h-3rem w-3rem border-circle hover:bg-white-alpha-10 transition-all transition-duration-200">
-        <i class="pi pi-home text-2xl"></i>
-      </button>
-      <h4 class="text-white cursor-pointer" routerLink="/">SGU</h4>
-    </div>
+  <div class="flex justify-content-between w-full">
+    <p-button
+      routerLink="/"
+      icon="pi pi-home"
+      label="SGU"
+      severity="secondary"
+      styleClass="text-200"></p-button>
+
+    <p-menubar [model]="items" styleClass="custom-menubar"></p-menubar>
   </div>
-
-  <div class="p-toolbar-group-center"></div>
-
-  <div class="p-toolbar-group-end"></div>
 </p-toolbar>

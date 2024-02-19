@@ -7,7 +7,7 @@ import { MessagesModule } from 'primeng/messages';
 import { ButtonModule } from 'primeng/button';
 import { AsyncPipe, NgClass, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ApiUsuariosService } from 'src/app/core/services/api-usuarios.service';
+import { ApiFuncionariosService } from 'src/app/core/services/api-funcionarios.service';
 import { Message } from 'primeng/api';
 import { take } from 'rxjs';
 
@@ -30,29 +30,33 @@ import { take } from 'rxjs';
   ],
 })
 export class ListagemComponent implements OnInit {
-  private apiUsuariosService = inject(ApiUsuariosService);
+  private ApiFuncionariosService = inject(ApiFuncionariosService);
   private router = inject(Router);
 
-  public usuarios$ = this.apiUsuariosService.usuarios$;
+  public usuarios$ = this.ApiFuncionariosService.usuarios$;
 
-  public error$ = this.apiUsuariosService.error$;
+  public error$ = this.ApiFuncionariosService.error$;
 
   public usuarioAutenticado = 'Administrador';
 
   public mensagemErroApi!: Message[];
 
   public titulosDaTabela = [
+    'id',
     'cpf',
     'Nome completo',
     'Data nascimento',
     'Telefone',
     'Email',
+    'Ativo',
+    'Salario',
+    'Departamento',
     'Editar',
     'Remover',
   ];
 
   public ngOnInit(): void {
-    this.apiUsuariosService.listaTodosUsuarios();
+    this.ApiFuncionariosService.listaTodosUsuarios();
 
     this.error$.subscribe(mensagem => {
       this.mensagemErroApi = [
@@ -69,9 +73,8 @@ export class ListagemComponent implements OnInit {
   }
 
   public removerUsuario(cpf: string): void {
-    this.apiUsuariosService
-      .removerUsuario(cpf)
+    this.ApiFuncionariosService.removerUsuario(cpf)
       .pipe(take(1))
-      .subscribe(() => this.apiUsuariosService.listaTodosUsuarios());
+      .subscribe(() => this.ApiFuncionariosService.listaTodosUsuarios());
   }
 }
