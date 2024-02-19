@@ -4,7 +4,6 @@
 @import '../node_modules/primeflex/primeflex.css';
 @import '../node_modules/primeicons/primeicons.css';
 
-$scale: 14px;
 $borderRadius: 12px;
 $transitionDuration: 0.2s;
 
@@ -14,7 +13,6 @@ $transitionDuration: 0.2s;
 
 html {
   height: 100%;
-  font-size: $scale;
 }
 
 body {
@@ -52,15 +50,15 @@ h6 {
 }
 
 h1 {
-  font-size: 2rem;
-}
-
-h2 {
   font-size: 1.75rem;
 }
 
+h2 {
+  font-size: 1.475rem;
+}
+
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
 }
 
 h4 {
@@ -78,6 +76,7 @@ h6 {
 p {
   margin: 0 0 1rem 0;
   line-height: 1.5;
+  font-size: 1rem;
 
   &:last-child {
     margin-bottom: 0;
@@ -93,5 +92,31 @@ p {
 
   &:last-child {
     margin-bottom: 0;
+  }
+}
+
+.custom-menubar {
+  .title {
+    font-size: 1rem;
+    color: var(--primary-color);
+    background-color: var(--surface-100);
+  }
+}
+
+
+
+
+@media (max-width: 960px) {
+
+  .custom-menubar {
+    display: flex;
+    flex-direction: row;
+
+    .title {
+      font-size: 1rem;
+      color: var(--primary-color);
+      min-width: 13rem;
+      border-radius: 8px;
+    }
   }
 }

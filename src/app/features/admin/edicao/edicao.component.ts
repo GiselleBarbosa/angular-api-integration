@@ -5,7 +5,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { Subscription } from 'rxjs';
-import { ApiUsuariosService } from 'src/app/core/services/api-usuarios.service';
+import { ApiFuncionariosService } from 'src/app/core/services/api-funcionarios.service';
 
 @Component({
   selector: 'app-edicao',
@@ -22,11 +22,11 @@ import { ApiUsuariosService } from 'src/app/core/services/api-usuarios.service';
   ],
 })
 export class EdicaoComponent implements OnInit, OnDestroy {
-  private apiUsuariosService = inject(ApiUsuariosService);
+  private ApiFuncionariosService = inject(ApiFuncionariosService);
   private route = inject(ActivatedRoute);
   private formBuilder = inject(FormBuilder);
 
-  public usuarioCpfSubject$ = this.apiUsuariosService.usuarioCpfSubject$;
+  public usuarioCpfSubject$ = this.ApiFuncionariosService.funcionarioCpfSubject$;
 
   public formularioAtualizacao!: FormGroup;
 
@@ -60,9 +60,8 @@ export class EdicaoComponent implements OnInit, OnDestroy {
   }
 
   public popularDadosUsuarioSelecionado(): void {
-    this.subcription = this.apiUsuariosService
-      .listaUsuarioPorCPF(this.cpf)
-      .subscribe(usuario => {
+    this.subcription = this.ApiFuncionariosService.listaUsuarioPorCPF(this.cpf).subscribe(
+      usuario => {
         console.log(usuario);
         this.formularioAtualizacao.patchValue({
           cpf: usuario.cpf,
@@ -71,7 +70,8 @@ export class EdicaoComponent implements OnInit, OnDestroy {
           telefone: usuario.telefone,
           email: usuario.email,
         });
-      });
+      }
+    );
   }
 
   public atualizarDados(): void {

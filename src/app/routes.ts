@@ -18,7 +18,7 @@ export const autenticaticaoRoutes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    title: 'Autenticação de usuário',
+    title: 'Autenticação de funcionário',
   },
 ];
 
@@ -32,7 +32,7 @@ export const funcionariosRoutes: Routes = [
   {
     path: 'funcionario-perfil',
     component: PerfilComponent,
-    title: 'Perfil do funcionario',
+    title: 'Perfil do funcionário',
   },
 ];
 
