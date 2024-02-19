@@ -1,15 +1,25 @@
 <h3>Acesse sua conta</h3>
 <div class="flex justify-content-center">
   <form [formGroup]="formularioLogin" (ngSubmit)="enviaFormulario()">
-    <div class="card flex flex-wrap p-fluid gap-3 max-w-30rem">
+    <div class="card flex flex-wrap p-fluid gap-3 max-w-30rem shadow-2">
       <div class="flex-auto">
         <label for="email">Email</label>
-        <input pInputText type="text" formControlName="email" class="mt-2" />
+        <input
+          autocomplete="on"
+          pInputText
+          type="text"
+          formControlName="email"
+          class="mt-2" />
       </div>
 
       <div class="flex-auto">
         <label for="senha">Senha</label>
-        <input pInputText type="password" formControlName="senha" class="mt-2" />
+        <input
+          pInputText
+          type="password"
+          formControlName="senha"
+          class="mt-2"
+          autocomplete="on" />
       </div>
 
       <div class="flex flex-column w-full justify-content-center">
