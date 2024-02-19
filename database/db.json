@@ -1,12 +1,15 @@
 {
-  "usuarios": [
+  "funcionarios": [
     {
       "cpf": "23423412300",
       "nome": "Clark Kent",
       "data_nascimento": "12/01/1990",
       "telefone": "11988228333",
       "email": "admin@email.com",
+      "salario": 14000,
       "password": "12345",
+      "em_atividade": true,
+      "departamento_id": 1,
       "role": "admin"
     },
     {
@@ -15,7 +18,10 @@
       "data_nascimento": "26/07/1968",
       "telefone": "55933443434",
       "email": "batman@batmail.com",
+      "salario": 22000,
       "password": "12345",
+      "em_atividade": false,
+      "departamento_id": 2,
       "role": "user"
     },
     {
@@ -24,7 +30,10 @@
       "data_nascimento": "01/10/1990",
       "telefone": "51976850888",
       "email": "tombraider@email.com",
+      "salario": 2000,
       "password": "12345",
+      "em_atividade": true,
+      "departamento_id": 3,
       "role": "user"
     },
     {
@@ -33,7 +42,10 @@
       "data_nascimento": "30/06/1985",
       "telefone": "14944997766",
       "email": "wonderwoman@email.com",
+      "salario": 52000,
       "password": "12345",
+      "em_atividade": true,
+      "departamento_id": 4,
       "role": "user"
     },
     {
@@ -42,7 +54,10 @@
       "data_nascimento": "29/05/1970",
       "telefone": "21925551234",
       "email": "ironman@starkindustries.com",
+      "salario": 8000,
       "password": "12345",
+      "em_atividade": true,
+      "departamento_id": 1,
       "role": "admin"
     },
     {
@@ -51,7 +66,10 @@
       "data_nascimento": "04/11/1982",
       "telefone": "65990124567",
       "email": "blackwidow@shield.com",
+      "salario": 35000,
       "password": "12345",
+      "em_atividade": false,
+      "departamento_id": 3,
       "role": "user"
     }
   ]
