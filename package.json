@@ -1,6 +1,11 @@
 {
   "name": "angular-api-integration",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": {
+    "name": "Giselle Barbosa",
+    "email": "giselle.barbosadev@gmail.com",
+    "url": "https://www.linkedin.com/in/gisellebarb/"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
