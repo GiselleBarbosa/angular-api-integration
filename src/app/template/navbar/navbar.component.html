@@ -7,11 +7,12 @@
   <div class="flex justify-content-between w-full">
     <p-button
       routerLink="/"
+      size="large"
       icon="pi pi-home"
       label="SGU"
       severity="secondary"
-      styleClass="text-200"></p-button>
+      styleClass="bg-transparent border-none"></p-button>
 
-    <p-menubar [model]="items" styleClass="custom-menubar"></p-menubar>
+    <app-sidebar />
   </div>
 </p-toolbar>

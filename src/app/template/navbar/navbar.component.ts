@@ -3,15 +3,15 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
   standalone: true,
-  imports: [ToolbarModule, ButtonModule, RouterLink, CommonModule, MenubarModule],
+  imports: [ToolbarModule, ButtonModule, RouterLink, CommonModule, SidebarComponent],
 })
 export class NavbarComponent implements OnInit {
   public items!: MenuItem[];
