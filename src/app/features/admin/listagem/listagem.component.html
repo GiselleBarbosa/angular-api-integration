@@ -5,7 +5,19 @@
 </div>
 
 <ng-container *ngIf="usuarios$ | async as usuarios">
-  <p-panel header="Lista de funcionários">
+  <p-panel>
+    <ng-template pTemplate="header">
+      <div class="flex align-items-center justify-content-between w-full">
+        <span class="font-bold">Lista de Funcionários</span>
+        <p-button
+          (click)="recarregarPagina()"
+          severity="secondary"
+          icon="pi pi-refresh"
+          [outlined]="true"
+          styleClass="border-none"></p-button>
+      </div>
+    </ng-template>
+
     <p-table [value]="usuarios" [tableStyle]="{ 'min-width': '50rem' }">
       <ng-template pTemplate="header">
         <tr>
@@ -53,3 +65,41 @@
     [enableService]="false"
     [closable]="false"></p-messages>
 </ng-container>
+
+<!-- 
+  <p-table [value]="usuarios" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th *ngFor="let titulo of titulosDaTabela">{{ titulo }}</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-usuario>
+        <tr>
+          <td>{{ usuario.cpf }}</td>
+          <td>{{ usuario.nome }}</td>
+          <td>{{ usuario.data_nascimento }}</td>
+          <td>{{ usuario.telefone }}</td>
+          <td>{{ usuario.email }}</td>
+          <td>{{ usuario.em_atividade }}</td>
+          <td>{{ usuario.salario }}</td>
+          <td>{{ usuario.departamento_id }}</td>
+          <td>
+            <p-button
+              (click)="navegarParaEdicaoUsuario(usuario.cpf)"
+              icon="pi pi-pencil"
+              [rounded]="true"
+              [text]="true"
+              severity="secondary"></p-button>
+          </td>
+          <td>
+            <p-button
+              (click)="removerUsuario(usuario.cpf)"
+              icon="pi pi-times"
+              [rounded]="true"
+              [text]="true"
+              severity="danger "></p-button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table> -->

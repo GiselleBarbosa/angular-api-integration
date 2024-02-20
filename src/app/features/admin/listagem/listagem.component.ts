@@ -47,7 +47,7 @@ export class ListagemComponent implements OnInit {
     'Data nascimento',
     'Telefone',
     'Email',
-    'Ativo',
+    'Status',
     'Salario',
     'Dpto',
     'Editar',
@@ -75,5 +75,9 @@ export class ListagemComponent implements OnInit {
     this.ApiFuncionariosService.removerUsuario(cpf)
       .pipe(take(1))
       .subscribe(() => this.ApiFuncionariosService.listaTodosUsuarios());
+  }
+
+  public recarregarPagina(): void {
+    location.reload();
   }
 }
