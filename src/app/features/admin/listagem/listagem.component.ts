@@ -63,6 +63,8 @@ export class ListagemComponent implements OnInit {
         {
           severity: 'error',
           summary: mensagem,
+          detail:
+            'Não foi possível exibir a lista de funcionários. Por favor, tente novamente mais tarde',
         },
       ];
     });

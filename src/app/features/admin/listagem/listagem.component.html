@@ -81,3 +81,12 @@
     </p-table>
   </p-panel>
 </ng-container>
+
+<ng-container *ngIf="error$ | async as mensagemDeErroDaApi">
+  <p-messages
+    *ngIf="mensagemDeErroDaApi !== null"
+    [(value)]="mensagemErroApi"
+    [showTransitionOptions]="'300ms'"
+    [enableService]="false"
+    [closable]="false"></p-messages>
+</ng-container>

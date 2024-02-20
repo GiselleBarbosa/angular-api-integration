@@ -38,7 +38,7 @@ export class ApiFuncionariosService {
   };
 
   public listaTodosUsuarios(): void {
-    const mensagemErro = 'Falha na requisição. Por favor, tente novamente mais tarde.';
+    const mensagemErro = 'Falha na requisição.';
 
     this.http
       .get<Funcionarios[]>(`${this.baseUrl}`, this.httpOptions)
@@ -55,7 +55,7 @@ export class ApiFuncionariosService {
   }
 
   public listaUsuarioPorCPF(cpf: string): Observable<Funcionarios> {
-    const mensagemErro = 'Falha na requisição. Por favor, tente novamente mais tarde.';
+    const mensagemErro = 'Falha na requisição.';
 
     return this.http
       .get<Funcionarios[]>(`${this.baseUrl}?cpf=${cpf}`, this.httpOptions)
@@ -78,8 +78,7 @@ export class ApiFuncionariosService {
   }
 
   public removerUsuario(cpf: string): Observable<void> {
-    const errorMessage =
-      'Falha ao remover funcionário. Por favor, tente novamente mais tarde.';
+    const errorMessage = 'Falha ao remover funcionário.';
 
     // Buscar o funcionário pelo CPF para obter o id correspondente
     return this.http.get<any[]>(`${this.baseUrl}?cpf=${cpf}`, this.httpOptions).pipe(
