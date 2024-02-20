@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
-import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { SidebarModule } from 'primeng/sidebar';
+import { MenuModule } from 'primeng/menu';
 import { MenuItem } from 'primeng/api';
-import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.scss'],
   standalone: true,
-  imports: [ToolbarModule, ButtonModule, RouterLink, CommonModule, SidebarComponent],
+  imports: [SidebarModule, ButtonModule, MenuModule],
 })
-export class NavbarComponent implements OnInit {
-  public items!: MenuItem[];
+export class SidebarComponent implements OnInit {
+  public sidebarVisible = false;
+
+  public items: MenuItem[] | undefined;
 
   public ngOnInit(): void {
     this.items = [
@@ -23,7 +23,6 @@ export class NavbarComponent implements OnInit {
         icon: 'pi pi-database',
         styleClass: 'title',
         routerLink: 'administrador/lista-funcionarios',
-        items: [],
       },
 
       {
@@ -31,8 +30,11 @@ export class NavbarComponent implements OnInit {
         icon: 'pi pi-user',
         styleClass: 'title',
         routerLink: '/funcionarios/funcionario-perfil',
-        items: [],
       },
     ];
+  }
+
+  public toogleSidebar(): void {
+    this.sidebarVisible = !this.sidebarVisible;
   }
 }
