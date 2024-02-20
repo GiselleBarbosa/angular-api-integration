@@ -33,15 +33,25 @@
       <input type="text" pInputText formControlName="telefone" class="mt-2" />
     </div>
 
+    <div class="flex-auto">
+      <label for="departamento">Departamento</label>
+      <input type="text" pInputText formControlName="departamento_id" class="mt-2" />
+    </div>
+
+    <div class="flex-auto">
+      <label for="status">Em atividade</label>
+      <input type="text" pInputText formControlName="em_atividade" class="mt-2" />
+    </div>
+
     <div
       class="flex flex-column justify-content-center gap-3 p-fluid w-12 mt-2 sm:flex-row sm:justify-content-start sm:w-3">
-      <p-button label="Salvar" [raised]="true" severity="secondary"></p-button>
-
       <p-button
-        label="cancelar "
+        label="Voltar "
         [outlined]="true"
         severity="secondary"
         routerLink="/administrador/lista-funcionarios"></p-button>
+
+      <p-button label="Salvar" [raised]="true" severity="secondary"></p-button>
     </div>
   </div>
 </form>

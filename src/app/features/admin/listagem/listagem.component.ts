@@ -5,7 +5,7 @@ import { TableModule } from 'primeng/table';
 import { MessagesModule } from 'primeng/messages';
 
 import { ButtonModule } from 'primeng/button';
-import { AsyncPipe, NgClass, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, CurrencyPipe, NgClass, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ApiFuncionariosService } from 'src/app/core/services/api-funcionarios.service';
 import { Message } from 'primeng/api';
@@ -27,6 +27,7 @@ import { take } from 'rxjs';
     FormsModule,
     AsyncPipe,
     MessagesModule,
+    CurrencyPipe,
   ],
 })
 export class ListagemComponent implements OnInit {
@@ -42,14 +43,12 @@ export class ListagemComponent implements OnInit {
   public mensagemErroApi!: Message[];
 
   public titulosDaTabela = [
-    'cpf',
+    '',
+    'CPF',
     'Nome completo',
-    'Data nascimento',
     'Telefone',
     'Email',
-    'Status',
     'Salario',
-    'Dpto',
     'Editar',
     'Remover',
   ];
