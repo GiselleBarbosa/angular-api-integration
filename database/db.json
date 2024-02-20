@@ -1,7 +1,7 @@
 {
   "funcionarios": [
     {
-      "cpf": "23423412300",
+      "cpf": "00000000000",
       "nome": "Clark Kent",
       "data_nascimento": "12/01/1990",
       "telefone": "11988228333",
@@ -13,7 +13,7 @@
       "role": "admin"
     },
     {
-      "cpf": "00012378908",
+      "cpf": "00000000000",
       "nome": "Bruce Wayne",
       "data_nascimento": "26/07/1968",
       "telefone": "55933443434",
@@ -25,7 +25,7 @@
       "role": "user"
     },
     {
-      "cpf": "11122233344",
+      "cpf": "00000000000",
       "nome": "Lara Croft",
       "data_nascimento": "01/10/1990",
       "telefone": "51976850888",
@@ -37,7 +37,7 @@
       "role": "user"
     },
     {
-      "cpf": "09876543210",
+      "cpf": "00000000000",
       "nome": "Diana Prince",
       "data_nascimento": "30/06/1985",
       "telefone": "14944997766",
@@ -49,7 +49,7 @@
       "role": "user"
     },
     {
-      "cpf": "77788899900",
+      "cpf": "00000000000",
       "nome": "Tony Stark",
       "data_nascimento": "29/05/1970",
       "telefone": "21925551234",
@@ -61,7 +61,7 @@
       "role": "admin"
     },
     {
-      "cpf": "44455566677",
+      "cpf": "00000000000",
       "nome": "Natasha Romanoff",
       "data_nascimento": "04/11/1982",
       "telefone": "65990124567",

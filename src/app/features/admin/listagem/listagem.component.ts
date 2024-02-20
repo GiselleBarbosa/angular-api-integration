@@ -42,7 +42,6 @@ export class ListagemComponent implements OnInit {
   public mensagemErroApi!: Message[];
 
   public titulosDaTabela = [
-    'id',
     'cpf',
     'Nome completo',
     'Data nascimento',
@@ -50,7 +49,7 @@ export class ListagemComponent implements OnInit {
     'Email',
     'Ativo',
     'Salario',
-    'Departamento',
+    'Dpto',
     'Editar',
     'Remover',
   ];
