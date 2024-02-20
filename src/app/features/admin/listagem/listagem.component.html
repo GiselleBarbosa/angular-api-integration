@@ -5,25 +5,47 @@
 </div>
 
 <ng-container *ngIf="usuarios$ | async as usuarios">
-  <p-panel header="Lista de funcionários">
-    <p-table [value]="usuarios" [tableStyle]="{ 'min-width': '50rem' }">
+  <p-panel>
+    <ng-template pTemplate="header">
+      <div class="flex align-items-center justify-content-between w-full">
+        <span class="font-bold">Lista de Funcionários</span>
+        <p-button
+          (click)="recarregarPagina()"
+          severity="secondary"
+          icon="pi pi-refresh"
+          [outlined]="true"
+          styleClass="border-none"></p-button>
+      </div>
+    </ng-template>
+
+    <p-table
+      dataKey="nome"
+      [value]="usuarios"
+      [tableStyle]="{ 'min-width': '60rem' }"
+      styleClass="p-datatable-sm">
       <ng-template pTemplate="header">
         <tr>
           <th *ngFor="let titulo of titulosDaTabela">{{ titulo }}</th>
         </tr>
       </ng-template>
 
-      <ng-template pTemplate="body" let-usuario>
+      <ng-template pTemplate="body" let-usuario let-expanded="expanded">
         <tr>
-          <td>{{ usuario.cpf }}</td>
+          <td>
+            <button
+              type="button"
+              pButton
+              pRipple
+              [pRowToggler]="usuario"
+              class="p-button-text p-button-rounded p-button-plain"
+              [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+          </td>
+          <td>{{ usuario.cpf | ocultarCpf }}</td>
           <td>{{ usuario.nome }}</td>
-          <td>{{ usuario.data_nascimento }}</td>
           <td>{{ usuario.telefone }}</td>
           <td>{{ usuario.email }}</td>
-          <td>{{ usuario.em_atividade }}</td>
-          <td>{{ usuario.salario }}</td>
-          <td>{{ usuario.departamento_id }}</td>
-          <td>
+          <td>{{ usuario.salario | currency : 'BRL' }}</td>
+          <td class="flex">
             <p-button
               (click)="navegarParaEdicaoUsuario(usuario.cpf)"
               icon="pi pi-pencil"
@@ -31,6 +53,7 @@
               [text]="true"
               severity="secondary"></p-button>
           </td>
+
           <td>
             <p-button
               (click)="removerUsuario(usuario.cpf)"
@@ -38,6 +61,20 @@
               [rounded]="true"
               [text]="true"
               severity="danger "></p-button>
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="rowexpansion" let-usuario dataKey="id">
+        <tr>
+          <td colspan="10">
+            <div class="p-1">
+              <p>
+                Data de Nascimento: {{ usuario.data_nascimento }} <br />
+                Departamento: {{ usuario.departamento_id }}<br />
+                Em atividade: {{ usuario.em_atividade }}<br />
+              </p>
+            </div>
           </td>
         </tr>
       </ng-template>

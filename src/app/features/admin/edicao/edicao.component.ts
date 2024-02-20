@@ -1,4 +1,4 @@
-import { AsyncPipe, CommonModule } from '@angular/common';
+import { AsyncPipe, CommonModule, CurrencyPipe } from '@angular/common';
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -19,6 +19,7 @@ import { ApiFuncionariosService } from 'src/app/core/services/api-funcionarios.s
     AsyncPipe,
     ReactiveFormsModule,
     RouterLink,
+    CurrencyPipe,
   ],
 })
 export class EdicaoComponent implements OnInit, OnDestroy {
@@ -56,6 +57,8 @@ export class EdicaoComponent implements OnInit, OnDestroy {
       data_nascimento: [null],
       telefone: [null],
       email: [null],
+      departamento_id: [null],
+      em_atividade: [null],
     });
   }
 
@@ -69,6 +72,8 @@ export class EdicaoComponent implements OnInit, OnDestroy {
           data_nascimento: usuario.data_nascimento,
           telefone: usuario.telefone,
           email: usuario.email,
+          departamento_id: usuario.departamento_id,
+          em_atividade: usuario.em_atividade,
         });
       }
     );

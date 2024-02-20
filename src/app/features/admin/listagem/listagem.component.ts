@@ -5,11 +5,12 @@ import { TableModule } from 'primeng/table';
 import { MessagesModule } from 'primeng/messages';
 
 import { ButtonModule } from 'primeng/button';
-import { AsyncPipe, NgClass, NgFor, NgIf } from '@angular/common';
+import { AsyncPipe, CurrencyPipe, NgClass, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ApiFuncionariosService } from 'src/app/core/services/api-funcionarios.service';
 import { Message } from 'primeng/api';
 import { take } from 'rxjs';
+import { OcultarCpfPipe } from 'src/app/core/pipes/ocultar-cpf/ocultar-cpf.pipe';
 
 @Component({
   selector: 'app-listagem',
@@ -27,6 +28,8 @@ import { take } from 'rxjs';
     FormsModule,
     AsyncPipe,
     MessagesModule,
+    CurrencyPipe,
+    OcultarCpfPipe,
   ],
 })
 export class ListagemComponent implements OnInit {
@@ -42,14 +45,12 @@ export class ListagemComponent implements OnInit {
   public mensagemErroApi!: Message[];
 
   public titulosDaTabela = [
-    'cpf',
+    '',
+    'CPF',
     'Nome completo',
-    'Data nascimento',
     'Telefone',
     'Email',
-    'Ativo',
     'Salario',
-    'Dpto',
     'Editar',
     'Remover',
   ];
@@ -62,6 +63,8 @@ export class ListagemComponent implements OnInit {
         {
           severity: 'error',
           summary: mensagem,
+          detail:
+            'Não foi possível exibir a lista de funcionários. Por favor, tente novamente mais tarde',
         },
       ];
     });
@@ -75,5 +78,9 @@ export class ListagemComponent implements OnInit {
     this.ApiFuncionariosService.removerUsuario(cpf)
       .pipe(take(1))
       .subscribe(() => this.ApiFuncionariosService.listaTodosUsuarios());
+  }
+
+  public recarregarPagina(): void {
+    location.reload();
   }
 }
