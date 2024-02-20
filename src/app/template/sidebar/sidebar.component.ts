@@ -21,14 +21,12 @@ export class SidebarComponent implements OnInit {
       {
         label: 'ADMINISTRADOR',
         icon: 'pi pi-database',
-        styleClass: 'title',
         routerLink: 'administrador/lista-funcionarios',
       },
 
       {
         label: 'FUNCIONÁRIOS',
         icon: 'pi pi-user',
-        styleClass: 'title',
         routerLink: '/funcionarios/funcionario-perfil',
       },
     ];
