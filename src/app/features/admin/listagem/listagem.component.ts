@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { ApiFuncionariosService } from 'src/app/core/services/api-funcionarios.service';
 import { Message } from 'primeng/api';
 import { take } from 'rxjs';
+import { OcultarCpfPipe } from 'src/app/core/pipes/ocultar-cpf/ocultar-cpf.pipe';
 
 @Component({
   selector: 'app-listagem',
@@ -28,6 +29,7 @@ import { take } from 'rxjs';
     AsyncPipe,
     MessagesModule,
     CurrencyPipe,
+    OcultarCpfPipe,
   ],
 })
 export class ListagemComponent implements OnInit {

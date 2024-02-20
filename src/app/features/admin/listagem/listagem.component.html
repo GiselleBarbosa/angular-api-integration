@@ -40,7 +40,7 @@
               class="p-button-text p-button-rounded p-button-plain"
               [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
           </td>
-          <td>{{ usuario.cpf }}</td>
+          <td>{{ usuario.cpf | ocultarCpf }}</td>
           <td>{{ usuario.nome }}</td>
           <td>{{ usuario.telefone }}</td>
           <td>{{ usuario.email }}</td>
