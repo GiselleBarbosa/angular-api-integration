@@ -19,13 +19,13 @@ export class SidebarComponent implements OnInit {
   public ngOnInit(): void {
     this.items = [
       {
-        label: 'ADMINISTRADOR',
+        label: 'Administrador',
         icon: 'pi pi-database',
         routerLink: 'administrador/lista-funcionarios',
       },
 
       {
-        label: 'FUNCIONÁRIOS',
+        label: 'Funcionários',
         icon: 'pi pi-user',
         routerLink: '/funcionarios/funcionario-perfil',
       },
