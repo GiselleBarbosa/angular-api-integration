@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CadastroComponent } from './cadastro.component';
+import { CadastroComponent } from '../src/app/features/funcionarios/cadastro/cadastro.component';
 
-describe('CadastroComponent', () => {
+describe(CadastroComponent.name, () => {
   let component: CadastroComponent;
   let fixture: ComponentFixture<CadastroComponent>;
 

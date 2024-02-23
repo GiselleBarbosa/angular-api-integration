@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EdicaoComponent } from './edicao.component';
+import { FooterComponent } from '../src/app/template/footer/footer.component';
 
-describe('EdicaoComponent', () => {
-  let component: EdicaoComponent;
-  let fixture: ComponentFixture<EdicaoComponent>;
+describe(FooterComponent.name, () => {
+  let component: FooterComponent;
+  let fixture: ComponentFixture<FooterComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [EdicaoComponent]
+      imports: [FooterComponent]
     });
-    fixture = TestBed.createComponent(EdicaoComponent);
+    fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
