@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './features/autenticacao/login/login.component';
-import { CadastroComponent } from './features/usuarios/cadastro/cadastro.component';
-import { PerfilComponent } from './features/usuarios/perfil/perfil.component';
+import { CadastroComponent } from './features/funcionarios/cadastro/cadastro.component';
+import { PerfilComponent } from './features/funcionarios/perfil/perfil.component';
 import { HomeComponent } from './features/home/home.component';
 import { ListagemComponent } from './features/admin/listagem/listagem.component';
 import { EdicaoComponent } from './features/admin/edicao/edicao.component';
@@ -26,7 +26,7 @@ export const funcionariosRoutes: Routes = [
   {
     path: 'cadastro',
     component: CadastroComponent,
-    title: 'Cadastro de usuarios',
+    title: 'Cadastro de funcionários',
   },
 
   {
@@ -40,24 +40,24 @@ export const administradorRoutes: Routes = [
   {
     path: 'lista-funcionarios',
     component: ListagemComponent,
-    title: 'Administrador - Lista de funcionarios',
+    title: 'Administrador - Lista de funcionários',
   },
 
   {
     path: 'lista-funcionarios/edicao/:cpf',
     component: EdicaoComponent,
-    title: 'Administrador - Edição de funcionarios',
+    title: 'Administrador - Edição de funcionários',
   },
 
   {
     path: 'adminstrador/perfil',
     component: PerfilComponent,
-    title: 'Administrador - Lista de funcionarios',
+    title: 'Administrador - Lista de funcionários',
   },
 
   {
     path: 'adminstrador/perfil/edicao',
     component: EdicaoComponent,
-    title: 'Administrador - Edicao de Perfil ADMINISTRADOR',
+    title: 'Administrador - Edição de Perfil ADMINISTRADOR',
   },
 ];

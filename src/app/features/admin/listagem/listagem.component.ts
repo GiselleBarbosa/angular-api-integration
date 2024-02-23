@@ -36,11 +36,11 @@ export class ListagemComponent implements OnInit {
   private ApiFuncionariosService = inject(ApiFuncionariosService);
   private router = inject(Router);
 
-  public usuarios$ = this.ApiFuncionariosService.usuarios$;
+  public funcionarios$ = this.ApiFuncionariosService.funcionarios$;
 
   public error$ = this.ApiFuncionariosService.error$;
 
-  public usuarioAutenticado = 'Administrador';
+  public funcionarioAutenticado = 'Administrador';
 
   public mensagemErroApi!: Message[];
 
@@ -56,7 +56,7 @@ export class ListagemComponent implements OnInit {
   ];
 
   public ngOnInit(): void {
-    this.ApiFuncionariosService.listaTodosUsuarios();
+    this.ApiFuncionariosService.listaTodosFuncionarios();
 
     this.error$.subscribe(mensagem => {
       this.mensagemErroApi = [
@@ -70,14 +70,14 @@ export class ListagemComponent implements OnInit {
     });
   }
 
-  public navegarParaEdicaoUsuario(cpf: string): void {
+  public navegarParaEdicaoFuncionario(cpf: string): void {
     this.router.navigate([`administrador/lista-funcionarios/edicao/${cpf}`]);
   }
 
-  public removerUsuario(cpf: string): void {
-    this.ApiFuncionariosService.removerUsuario(cpf)
+  public removerFuncionario(cpf: string): void {
+    this.ApiFuncionariosService.removerFuncionario(cpf)
       .pipe(take(1))
-      .subscribe(() => this.ApiFuncionariosService.listaTodosUsuarios());
+      .subscribe(() => this.ApiFuncionariosService.listaTodosFuncionarios());
   }
 
   public recarregarPagina(): void {

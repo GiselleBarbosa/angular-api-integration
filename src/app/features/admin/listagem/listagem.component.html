@@ -1,10 +1,10 @@
 <div class="flex justify-content-between align-items-center mb-3">
-  <h3>Olá, {{ usuarioAutenticado }}</h3>
+  <h3>Olá, {{ funcionarioAutenticado }}</h3>
 
   <i class="pi pi-sign-out cursor-pointer text-2xl" routerLink="/"></i>
 </div>
 
-<ng-container *ngIf="usuarios$ | async as usuarios">
+<ng-container *ngIf="funcionarios$ | async as funcionarios">
   <p-panel>
     <ng-template pTemplate="header">
       <div class="flex align-items-center justify-content-between w-full">
@@ -20,7 +20,7 @@
 
     <p-table
       dataKey="nome"
-      [value]="usuarios"
+      [value]="funcionarios"
       [tableStyle]="{ 'min-width': '60rem' }"
       styleClass="p-datatable-sm">
       <ng-template pTemplate="header">
@@ -29,25 +29,25 @@
         </tr>
       </ng-template>
 
-      <ng-template pTemplate="body" let-usuario let-expanded="expanded">
+      <ng-template pTemplate="body" let-funcionario let-expanded="expanded">
         <tr>
           <td>
             <button
               type="button"
               pButton
               pRipple
-              [pRowToggler]="usuario"
+              [pRowToggler]="funcionario"
               class="p-button-text p-button-rounded p-button-plain"
               [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
           </td>
-          <td>{{ usuario.cpf | ocultarCpf }}</td>
-          <td>{{ usuario.nome }}</td>
-          <td>{{ usuario.telefone }}</td>
-          <td>{{ usuario.email }}</td>
-          <td>{{ usuario.salario | currency : 'BRL' }}</td>
+          <td>{{ funcionario.cpf | ocultarCpf }}</td>
+          <td>{{ funcionario.nome }}</td>
+          <td>{{ funcionario.telefone }}</td>
+          <td>{{ funcionario.email }}</td>
+          <td>{{ funcionario.salario | currency : 'BRL' }}</td>
           <td class="flex">
             <p-button
-              (click)="navegarParaEdicaoUsuario(usuario.cpf)"
+              (click)="navegarParaEdicaoFuncionario(funcionario.cpf)"
               icon="pi pi-pencil"
               [rounded]="true"
               [text]="true"
@@ -56,7 +56,7 @@
 
           <td>
             <p-button
-              (click)="removerUsuario(usuario.cpf)"
+              (click)="removerFuncionario(funcionario.cpf)"
               icon="pi pi-times"
               [rounded]="true"
               [text]="true"
@@ -65,14 +65,14 @@
         </tr>
       </ng-template>
 
-      <ng-template pTemplate="rowexpansion" let-usuario dataKey="id">
+      <ng-template pTemplate="rowexpansion" let-funcionario dataKey="id">
         <tr>
           <td colspan="10">
             <div class="p-1">
               <p>
-                Data de Nascimento: {{ usuario.data_nascimento }} <br />
-                Departamento: {{ usuario.departamento_id }}<br />
-                Em atividade: {{ usuario.em_atividade }}<br />
+                Data de Nascimento: {{ funcionario.data_nascimento }} <br />
+                Departamento: {{ funcionario.departamento_id }}<br />
+                Em atividade: {{ funcionario.em_atividade }}<br />
               </p>
             </div>
           </td>

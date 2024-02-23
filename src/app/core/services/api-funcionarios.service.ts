@@ -23,7 +23,7 @@ export class ApiFuncionariosService {
   private baseUrl = environment.baseUrl;
 
   private funcionariosSubject = new BehaviorSubject<Funcionarios[]>([]);
-  public usuarios$ = this.funcionariosSubject.asObservable();
+  public funcionarios$ = this.funcionariosSubject.asObservable();
 
   private errorSubject = new BehaviorSubject<string>('');
   public error$ = this.errorSubject.asObservable();
@@ -37,13 +37,13 @@ export class ApiFuncionariosService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-  public listaTodosUsuarios(): void {
+  public listaTodosFuncionarios(): void {
     const mensagemErro = 'Falha na requisição.';
 
     this.http
       .get<Funcionarios[]>(`${this.baseUrl}`, this.httpOptions)
       .pipe(
-        tap(usuarios => this.funcionariosSubject.next(usuarios)),
+        tap(funcionarios => this.funcionariosSubject.next(funcionarios)),
         catchError(error => {
           this.errorSubject.next(mensagemErro);
           return throwError(mensagemErro, error);
@@ -54,20 +54,20 @@ export class ApiFuncionariosService {
       .subscribe();
   }
 
-  public listaUsuarioPorCPF(cpf: string): Observable<Funcionarios> {
+  public listaFuncionarioPorCPF(cpf: string): Observable<Funcionarios> {
     const mensagemErro = 'Falha na requisição.';
 
     return this.http
       .get<Funcionarios[]>(`${this.baseUrl}?cpf=${cpf}`, this.httpOptions)
       .pipe(
-        map(usuarios => {
-          if (usuarios.length > 0) {
-            return usuarios[0];
+        map(funcionarios => {
+          if (funcionarios.length > 0) {
+            return funcionarios[0];
           } else {
             throw new Error('Funcionário não encontrado');
           }
         }),
-        tap(usuario => this.funcionarioCpfSubject.next(usuario)),
+        tap(funcionario => this.funcionarioCpfSubject.next(funcionario)),
         catchError(error => {
           this.errorSubject.next(mensagemErro);
           return throwError(mensagemErro, error);
@@ -77,14 +77,14 @@ export class ApiFuncionariosService {
       );
   }
 
-  public removerUsuario(cpf: string): Observable<void> {
+  public removerFuncionario(cpf: string): Observable<void> {
     const errorMessage = 'Falha ao remover funcionário.';
 
     // Buscar o funcionário pelo CPF para obter o id correspondente
     return this.http.get<any[]>(`${this.baseUrl}?cpf=${cpf}`, this.httpOptions).pipe(
-      switchMap(usuarios => {
-        if (usuarios.length > 0) {
-          const id = usuarios[0].id; // Supondo que o identificador único seja 'id'
+      switchMap(funcionarios => {
+        if (funcionarios.length > 0) {
+          const id = funcionarios[0].id; // Supondo que o identificador único seja 'id'
           return this.http.delete<void>(`${this.baseUrl}/${id}`, this.httpOptions).pipe(
             catchError(error => {
               this.errorSubject.next(errorMessage);
