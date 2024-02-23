@@ -1,1 +1,28 @@
-<p>footer works!</p>
+<p-toolbar
+  styleClass="border-noround border-none sm:pl-6 sm:pr-6  bg-gray-900 shadow-2"
+  [style]="{
+    'background-image':
+      'linear-gradient(to right, var(--bluegray-500), var(--bluegray-800))'
+  }">
+  <div class="p-toolbar-group-start"></div>
+
+  <div class="p-toolbar-group-center">
+    <div class="mr-5">
+      <p class="text-100" routerLink="pagina-inicial">
+        &copy; {{ currentYear }}
+        <span class="author-name cursor-pointer" routerLink="pagina-inicial"
+          >Giselle Barbosa</span
+        >
+      </p>
+    </div>
+
+    <div class="flex gap-3">
+      <i class="pi pi-github cursor-pointer text-2xl text-100" (click)="openGithub()"></i>
+      <i
+        class="pi pi-linkedin cursor-pointer text-2xl text-100"
+        (click)="openLinkedin()"></i>
+    </div>
+  </div>
+
+  <div class="p-toolbar-group-end"></div>
+</p-toolbar>

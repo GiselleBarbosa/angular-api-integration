@@ -27,8 +27,6 @@ export class EdicaoComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private formBuilder = inject(FormBuilder);
 
-  public usuarioCpfSubject$ = this.ApiFuncionariosService.funcionarioCpfSubject$;
-
   public formularioAtualizacao!: FormGroup;
 
   public cpf!: string;
@@ -40,7 +38,7 @@ export class EdicaoComponent implements OnInit, OnDestroy {
 
     this.receberCpfDaRota();
 
-    this.popularDadosUsuarioSelecionado();
+    this.popularDadosFuncionariosSelecionado();
   }
 
   private receberCpfDaRota(): void {
@@ -62,21 +60,21 @@ export class EdicaoComponent implements OnInit, OnDestroy {
     });
   }
 
-  public popularDadosUsuarioSelecionado(): void {
-    this.subcription = this.ApiFuncionariosService.listaUsuarioPorCPF(this.cpf).subscribe(
-      usuario => {
-        console.log(usuario);
-        this.formularioAtualizacao.patchValue({
-          cpf: usuario.cpf,
-          nome: usuario.nome,
-          data_nascimento: usuario.data_nascimento,
-          telefone: usuario.telefone,
-          email: usuario.email,
-          departamento_id: usuario.departamento_id,
-          em_atividade: usuario.em_atividade,
-        });
-      }
-    );
+  public popularDadosFuncionariosSelecionado(): void {
+    this.subcription = this.ApiFuncionariosService.listaFuncionarioPorCPF(
+      this.cpf
+    ).subscribe(funcionario => {
+      console.log(funcionario);
+      this.formularioAtualizacao.patchValue({
+        cpf: funcionario.cpf,
+        nome: funcionario.nome,
+        data_nascimento: funcionario.data_nascimento,
+        telefone: funcionario.telefone,
+        email: funcionario.email,
+        departamento_id: funcionario.departamento_id,
+        em_atividade: funcionario.em_atividade,
+      });
+    });
   }
 
   public atualizarDados(): void {

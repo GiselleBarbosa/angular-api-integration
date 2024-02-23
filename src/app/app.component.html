@@ -1,8 +1,9 @@
-<div class="flex flex-column">
+<div class="flex flex-column min-h-screen">
   <app-navbar />
-  <p-card class="container p-4">
-    <router-outlet></router-outlet>
-  </p-card>
-  <!--   <app-footer />
- -->
+
+  <div class="flex-grow m-4 pb-3">
+    <router-outlet />
+  </div>
+
+  <app-footer class="mt-auto" />
 </div>
