@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EdicaoComponent } from '../src/app/features/admin/edicao/edicao.component';
+import { EdicaoComponent } from '../app/features/admin/edicao/edicao.component';
 
 describe(EdicaoComponent.name, () => {
   let component: EdicaoComponent;

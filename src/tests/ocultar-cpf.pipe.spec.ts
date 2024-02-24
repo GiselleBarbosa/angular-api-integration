@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-import { OcultarCpfPipe } from '../src/app/core/pipes/ocultar-cpf/ocultar-cpf.pipe';
+import { OcultarCpfPipe } from '../app/core/pipes/ocultar-cpf/ocultar-cpf.pipe';
 
 describe(OcultarCpfPipe.name, () => {
   it('create an instance', () => {
