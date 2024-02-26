@@ -8,8 +8,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open",
-    "serve:proxy": "ng serve --proxy-config proxy.conf.ts",
+    "start": "ng serve --open",    
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
