@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { ApiFuncionariosService } from './api-funcionarios.service';
+import { ApiFuncionariosService } from 'src/app/core/services/api-funcionarios.service';
 
 
 describe(ApiFuncionariosService.name, () => {
