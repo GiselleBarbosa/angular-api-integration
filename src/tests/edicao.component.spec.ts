@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EdicaoComponent } from '../app/features/admin/edicao/edicao.component';
+import { RouterTestingModule } from "@angular/router/testing";
 
 describe(EdicaoComponent.name, () => {
   let component: EdicaoComponent;
@@ -8,7 +9,7 @@ describe(EdicaoComponent.name, () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [EdicaoComponent]
+      imports: [EdicaoComponent, RouterTestingModule]
     });
     fixture = TestBed.createComponent(EdicaoComponent);
     component = fixture.componentInstance;

@@ -1,22 +1,64 @@
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { takeUntil } from 'rxjs/operators';
 import { ApiFuncionariosService } from 'src/app/core/services/api-funcionarios.service';
-
+import { RouterTestingModule } from "@angular/router/testing";
 
 describe(ApiFuncionariosService.name, () => {
   let service: ApiFuncionariosService;
+  let httpTestingController: HttpTestingController;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule, RouterTestingModule ], // Importe o HttpClientTestingModule
+      providers: [ApiFuncionariosService], // Remova a configuração manual do HttpClient
+    });
     service = TestBed.inject(ApiFuncionariosService);
+    httpTestingController = TestBed.inject(HttpTestingController);
   });
 
-  it('should be created', () => {
+  afterEach(() => {
+    httpTestingController.verify(); // Verifique se não há solicitações HTTP pendentes após cada teste
+  });
+
+  it('Deve ser criado', () => {
     expect(service).toBeTruthy();
   });
 
-  it(`#${ApiFuncionariosService.prototype.listaTodosFuncionarios.name} 
-  Deve retornar a lista com todos os funcionarios`, () => {
-    const lista = service.listaTodosFuncionarios();
-    expect(lista).toBeTrue();
+  it('Deve listar todos os funcionarios', () => {
+    const mockFuncionarios = [{
+      nome: 'Funcionario 1',
+      telefone: '123456789',
+      email: 'funcionario1@example.com',
+      cpf: '12345678900',
+      senha: 'password123',
+      data_nascimento: new Date('1990-01-01'),
+      salario: '1000',
+      em_atividade: true,
+      departamento_id: 1,
+      role: 'user'
+    }];
+
+    service.listaTodosFuncionarios();
+    service.funcionarios$.pipe(takeUntil(service.funcionarioCpfSubject$)).subscribe(funcionarios => {
+      expect(funcionarios).toEqual(mockFuncionarios);
+    });
+
+    const req = httpTestingController.expectOne('http://localhost:3000/funcionarios');
+    expect(req.request.method).toEqual('GET');
+    req.flush(mockFuncionarios);
+  });
+
+  it('Deve tratar o erro quando ele ocorrer', () => {
+    const errorMessage = 'Falha na requisição.';
+
+    service.listaTodosFuncionarios();
+    service.error$.subscribe(error => {
+      expect(error).toBe(errorMessage);
+    });
+
+    const req = httpTestingController.expectOne('http://localhost:3000/funcionarios');
+    expect(req.request.method).toEqual('GET');
+    req.error(new ErrorEvent('networkError'));
   });
 });
