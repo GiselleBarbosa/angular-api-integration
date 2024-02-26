@@ -4,9 +4,9 @@ export interface Funcionarios {
   email: string;
   cpf: string;
   senha: string;
-  data_nascimento: Date;
+  dataNascimento: Date;
   salario: string;
-  em_atividade: boolean;
-  departamento_id: number;
+  emAtividade: boolean;
+  departamentoId: number;
   role: string;
 }

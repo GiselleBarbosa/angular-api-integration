@@ -32,10 +32,10 @@ describe(ApiFuncionariosService.name, () => {
       email: 'funcionario1@example.com',
       cpf: '12345678900',
       senha: 'password123',
-      data_nascimento: new Date('1990-01-01'),
+      dataNascimento: new Date('1990-01-01'),
       salario: '1000',
-      em_atividade: true,
-      departamento_id: 1,
+      emAtividade: true,
+      departamentoId: 1,
       role: 'user'
     }];
 

@@ -52,11 +52,11 @@ export class EdicaoComponent implements OnInit, OnDestroy {
     this.formularioAtualizacao = this.formBuilder.group({
       cpf: [null],
       nome: [null],
-      data_nascimento: [null],
+      dataNascimento: [null],
       telefone: [null],
       email: [null],
-      departamento_id: [null],
-      em_atividade: [null],
+      departamentoId: [null],
+      emAtividade: [null],
     });
   }
 
@@ -68,11 +68,11 @@ export class EdicaoComponent implements OnInit, OnDestroy {
       this.formularioAtualizacao.patchValue({
         cpf: funcionario.cpf,
         nome: funcionario.nome,
-        data_nascimento: funcionario.data_nascimento,
+        dataNascimento: funcionario.dataNascimento,
         telefone: funcionario.telefone,
         email: funcionario.email,
-        departamento_id: funcionario.departamento_id,
-        em_atividade: funcionario.em_atividade,
+        departamentoId: funcionario.departamentoId,
+        emAtividade: funcionario.emAtividade,
       });
     });
   }
