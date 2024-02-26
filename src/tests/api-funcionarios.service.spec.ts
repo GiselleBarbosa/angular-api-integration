@@ -10,15 +10,15 @@ describe(ApiFuncionariosService.name, () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, RouterTestingModule ], // Importe o HttpClientTestingModule
-      providers: [ApiFuncionariosService], // Remova a configuração manual do HttpClient
+      imports: [HttpClientTestingModule, RouterTestingModule ], 
+      providers: [ApiFuncionariosService], 
     });
     service = TestBed.inject(ApiFuncionariosService);
     httpTestingController = TestBed.inject(HttpTestingController);
   });
 
   afterEach(() => {
-    httpTestingController.verify(); // Verifique se não há solicitações HTTP pendentes após cada teste
+    httpTestingController.verify(); 
   });
 
   it('Deve ser criado', () => {

@@ -21,6 +21,7 @@ import { Funcionarios } from '../interfaces/funcionarios.interface';
 export class ApiFuncionariosService {
   private http = inject(HttpClient);
   private baseUrl = environment.baseUrl;
+  private apiBaseUrl = environment.apiBaseUrl;
 
   private funcionariosSubject = new BehaviorSubject<Funcionarios[]>([]);
   public funcionarios$ = this.funcionariosSubject.asObservable();
@@ -41,7 +42,7 @@ export class ApiFuncionariosService {
     const mensagemErro = 'Falha na requisição.';
 
     this.http
-      .get<Funcionarios[]>(`${this.baseUrl}`, this.httpOptions)
+      .get<Funcionarios[]>(`${this.apiBaseUrl}`, this.httpOptions)
       .pipe(
         tap(funcionarios => this.funcionariosSubject.next(funcionarios)),
         catchError(error => {
