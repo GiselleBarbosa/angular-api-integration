@@ -1,4 +1,4 @@
-# SGU - Sistema de Gerenciamento de Usuários [Front-end]
+## SGU - Sistema de Gerenciamento de Usuários [Front-end]
 
 O SGU (Sistema de Gerenciamento de Usuários) é uma aplicação web desenvolvida com Angular no front-end, Java com Spring Boot no back-end e PostgreSQL como banco de dados. O principal objetivo deste sistema é fornecer funcionalidades básicas para o gerenciamento de perfis de administradores do sistema ou funcionários.
 
