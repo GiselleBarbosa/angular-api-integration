@@ -10,17 +10,21 @@ O SGU (Sistema de Gerenciamento de Usuários) é uma aplicação web desenvolvid
 ## Tecnologias Utilizadas
 
 - Angular 16
-- Java com Spring Boot
+- Java 17
+- Spring Boot 3
 - PostgreSQL
 
 ## Pré-requisitos
 
 Antes de executar a aplicação, certifique-se de ter instalado o seguinte:
 
-- Node.js
 - Angular CLI
 - Java Development Kit (JDK)
 - PostgreSQL
+
+## Backend
+
+O backend deste projeto está disponível em [java-spring-postgre-sgu-backend](https://github.com/GiselleBarbosa/java-spring-postgre-sgu-backend). Certifique-se de configurar e executar o backend antes de iniciar a aplicação frontend.
 
 ## Executando a Aplicação
 
@@ -32,7 +36,13 @@ Antes de executar a aplicação, certifique-se de ter instalado o seguinte:
 
 ## Configuração do Banco de Dados
 
-O esquema do banco de dados pode ser encontrado no diretório `database`. Certifique-se de configurar corretamente o banco de dados antes de iniciar a aplicação.
+O esquema do banco de dados está disponível no diretório `database`. Inicialmente, você pode usar o JSON Server para simular o banco de dados enquanto o PostgreSQL não está disponível. Certifique-se de configurar corretamente o banco de dados antes de iniciar a aplicação.
+
+### Utilizando JSON Server (opcional)
+
+Se você ainda não configurou o PostgreSQL, pode utilizar o JSON Server como uma opção temporária. Navegue até o diretório `database` e execute o comando `json-server --watch db.json --port 3000` para iniciar o JSON Server. Isso iniciará um servidor de mock que simula o comportamento do banco de dados.
+
+Certifique-se de migrar para o PostgreSQL assim que possível para garantir uma configuração adequada do banco de dados em produção.
 
 ## Visualização do Mapa do Site
 
