@@ -40,19 +40,19 @@ export const administradorRoutes: Routes = [
   {
     path: 'lista-funcionarios',
     component: ListagemComponent,
-    title: 'Administrador - Lista de funcionários',
+    title: 'Admin | Lista de funcionários',
   },
 
   {
     path: 'lista-funcionarios/edicao/:cpf',
     component: EdicaoComponent,
-    title: 'Administrador - Edição de funcionários',
+    title: 'Admin | Edição de funcionários',
   },
 
   {
     path: 'adminstrador/perfil',
     component: PerfilComponent,
-    title: 'Administrador - Lista de funcionários',
+    title: 'Admin | Lista de funcionários',
   },
 
   {
