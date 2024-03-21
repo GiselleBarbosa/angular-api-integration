@@ -50,12 +50,6 @@ Você pode visualizar o mapa do site abaixo:
 
 ![Mapa do Site](src/assets/docs/mapa_site.png)
 
-## Visualização da Modelagem de Dados
-
-Você pode visualizar uma prévia da modelagem de dados abaixo:
-
-![Modelagem de Dados](src/assets/docs/modelagem_inicial.png)
-
 ## Contribuindo
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request com melhorias, correções de bugs ou novas funcionalidades.
